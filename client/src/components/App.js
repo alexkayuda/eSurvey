@@ -36,7 +36,6 @@ import Landing from './Landing';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 import Footer from './Footer';
-import Feedback from './Feedback';
 
 class App extends Component {
 
@@ -54,7 +53,6 @@ class App extends Component {
                         <Route exact path = "/" component = { Landing } />
                         <Route exact path = "/surveys" component = { Dashboard } /> 
                         <Route exact path = "/surveys/new" component = { SurveyNew } />
-                        <Route exact path = "/feedback" component = { Feedback } />
                         <Footer/>
                     </div>
                 </BrowserRouter>

@@ -79,8 +79,8 @@ module.exports = (app) => {
 
 
     app.get('/api/surveys/:surveyId/:choice', (request, response) => {
-        //response.send("Thanks for voting!");
-        response.redirect('/feedback');
+        response.send("Thanks for voting!");
+        // response.redirect('/feedback');
     });
     
 
