@@ -45,13 +45,17 @@ module.exports = (app) => {
 
         _.chain(request.body)
         .map((event) => {
-            const match = p.test(new URL(event.url).pathname);  //math is null || Object
-            if(match){
-                return {
-                    email: event.email,
-                    surveyId: match.surveyId,
-                    choice: match.choice
-                };
+            if(!event.url){
+                return res.status(400).json({ error: 'Some error message' });
+            } else{
+                const match = p.test(new URL(event.url).pathname);  //match is null || Object
+                if(match){
+                    return {
+                        email: event.email,
+                        surveyId: match.surveyId,
+                        choice: match.choice
+                    };
+                }
             }
         })
         .compact() //go throught array and removes all elements that are 'undefined'
